@@ -17,7 +17,15 @@ public class QuestionService {
     @Autowired
     QuestionDAO questionDAO;
 
+    public Question getById(int id){
+        return questionDAO.getById(id);
+    }
+
     public List<Question> getLatestQuestions(int userId, int offset, int limit) {
         return questionDAO.selectLatestQuestions(userId, offset, limit);
+    }
+
+    public int updateCommentCount(int id, int count){
+        return questionDAO.updateCommentCount(id, count);
     }
 }
