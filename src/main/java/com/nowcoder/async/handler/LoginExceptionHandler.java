@@ -23,7 +23,7 @@ public class LoginExceptionHandler implements EventHandler{
         //判断发现这个用户登录异常
         Map<String,Object> map=new HashMap<String,Object>();
         map.put("username",model.getExt("username"));
-        mailSender.sendWithHTMLTemplate(model.getExt("email"),"登录IP异常",
+        mailSender.sendWithHTMLTemplate(model.getExt("email"),"欢迎登录",
                 "mails/login_exception.html", map);
     }
 

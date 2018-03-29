@@ -74,7 +74,7 @@ public class MessageController {
                 vo.set("userId",user.getId());
                 message.add(vo);
             }
-            model.addAttribute("message",message);
+            model.addAttribute("messages",message);
         }catch (Exception e){
             logger.error("获取详情信息失败"+e.getMessage());
         }

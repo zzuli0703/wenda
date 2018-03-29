@@ -83,8 +83,8 @@ public class LoginController {
                 }
                 response.addCookie(cookie);
 
-                eventProducer.fireEvent(new EventModel(EventType.LOGIN).setExt("username",username)
-                        .setExt("email","fanrui_2016@163.com").setActorId((int)map.get("userId")));
+               eventProducer.fireEvent(new EventModel(EventType.LOGIN).setExt("username",username)
+                     .setExt("email","1142795976@qq.com").setActorId((int)map.get("userId")));
 
 
                 if (StringUtils.isNotBlank(next)) {

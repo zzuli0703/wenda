@@ -31,12 +31,11 @@ public class MailSender implements InitializingBean{
     public boolean sendWithHTMLTemplate(String to,String subject,String template,
                                         Map<String, Object> model){
         try{
-            String nick= MimeUtility.encodeText("牛客中级课");
-            InternetAddress from=new InternetAddress(nick+"<conse@nowcoder.com>");
+            String nick= MimeUtility.encodeText("问答网站");
+            InternetAddress from=new InternetAddress(nick+"<fanrui_2016@163.com>");
             MimeMessage mimeMessage=mailSender.createMimeMessage();
             MimeMessageHelper mimeMessageHelper=new MimeMessageHelper(mimeMessage);
-            String result = VelocityEngineUtils
-                    .mergeTemplateIntoString(velocityEngine,template,"UTF-8",model);
+            String result = VelocityEngineUtils.mergeTemplateIntoString(velocityEngine,template,"UTF-8",model);
 
             mimeMessageHelper.setTo(to);
             mimeMessageHelper.setFrom(from);
