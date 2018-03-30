@@ -63,7 +63,7 @@ public class FollowController {
             return WendaUtil.getJSONString(999);
         }
 
-        boolean ret=followService.follow(hostHolder.getUser().getId(), EntityType.ENTITY_USER ,userId);
+        boolean ret=followService.unfollow(hostHolder.getUser().getId(), EntityType.ENTITY_USER ,userId);
 
         eventProducer.fireEvent(new EventModel(EventType.UNFOLLOW)
                 .setActorId(hostHolder.getUser().getId()).setEntityId(userId)
@@ -111,7 +111,7 @@ public class FollowController {
             return WendaUtil.getJSONString(1, "问题不存在");
         }
 
-        boolean ret = followService.follow(hostHolder.getUser().getId(), EntityType.ENTITY_QUESTION, questionId);
+        boolean ret = followService.unfollow(hostHolder.getUser().getId(), EntityType.ENTITY_QUESTION, questionId);
 
         eventProducer.fireEvent(new EventModel(EventType.UNFOLLOW)
                 .setActorId(hostHolder.getUser().getId()).setEntityId(questionId)
